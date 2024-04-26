@@ -1,162 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Merchandise Company</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #3498db;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    .product {
-      display: flex;
-      margin-bottom: 20px;
-    }
-    .product img {
-      max-width: 200px;
-      margin-right: 20px;
-    }
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-    }
-    form {
-      margin-bottom: 20px;
-    }
-    form label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
-    form button {
-      padding: 8px 20px;
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Apparel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product-tile {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-tile:hover {
+            transform: scale(1.05);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+        }
+        .product-details {
+            padding: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Merchandise Company</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <div class="container">
-    <section id="home">
-      <h2>Welcome to our merchandise store!</h2>
-      <p>Explore our colorful collection of products.</p>
-    </section>
-    <section id="products">
-      <h2>Our Products</h2>
-      <div class="product">
-        <img src="product1.jpg" alt="Product 1">
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    <div class="container"></div>
+
+    <footer>
         <div>
-          <h3>Product 1</h3>
-          <p>Description of Product 1 goes here.</p>
-          <p>Price: $XX.XX</p>
-          <button class="add-to-cart" data-product="Product 1" data-price="XX.XX">Add to Cart</button>
+            <h4>Contact Us</h4>
+            <p>Email: info@colorfulapparel.com</p>
+            <p>Phone: 123-456-7890</p>
         </div>
-      </div>
-      <div class="product">
-        <img src="product2.jpg" alt="Product 2">
         <div>
-          <h3>Product 2</h3>
-          <p>Description of Product 2 goes here.</p>
-          <p>Price: $XX.XX</p>
-          <button class="add-to-cart" data-product="Product 2" data-price="XX.XX">Add to Cart</button>
+            <h4>Subscribe to Our Newsletter</h4>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
-      </div>
-      <!-- Add more products as needed -->
-    </section>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form id="contact-form">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </div>
-  <footer>
-    <p>&copy; 2024 Merchandise Company. All rights reserved.</p>
-  </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Add to Cart functionality
-      const addToCartButtons = document.querySelectorAll('.add-to-cart');
-      addToCartButtons.forEach(button => {
-        button.addEventListener('click', addToCart);
-      });
+        <div>
+            <p>&copy; 2024 Colorful Apparel. All rights reserved.</p>
+        </div>
+    </footer>
 
-      function addToCart(event) {
-        const product = event.target.dataset.product;
-        const price = event.target.dataset.price;
+    <script>
+        function displayImages(imageUrls) {
+            const container = document.querySelector('.container');
+            container.innerHTML = ''; // Clear existing content
+            
+            imageUrls.forEach(url => {
+                const productTile = document.createElement('div');
+                productTile.classList.add('product-tile');
+                
+                const productImage = document.createElement('div');
+                productImage.classList.add('product-image');
+                productImage.style.backgroundImage = `url('${url}')`;
+                
+                const productDetails = document.createElement('div');
+                productDetails.classList.add('product-details');
+                
+                const title = document.createElement('h3');
+                title.textContent = 'Product Title';
+                
+                const price = document.createElement('p');
+                price.textContent = '$19.99'; // Example price
+                
+                productDetails.appendChild(title);
+                productDetails.appendChild(price);
+                
+                productTile.appendChild(productImage);
+                productTile.appendChild(productDetails);
+                
+                container.appendChild(productTile);
+            });
+        }
 
-        // Here, you can implement logic to add the product to the cart, such as storing it in local storage or sending it to a server.
-        console.log(`Added ${product} to cart. Price: $${price}`);
-        alert(`Added ${product} to cart.`);
-      }
-
-      // Form submission handling
-      const contactForm = document.getElementById('contact-form');
-      contactForm.addEventListener('submit', handleFormSubmit);
-
-      function handleFormSubmit(event) {
-        event.preventDefault();
-        const formData = new FormData(contactForm);
-        const formDataObject = Object.fromEntries(formData.entries());
-
-        // Here, you can implement logic to handle the form data, such as sending it to a server using fetch or XMLHttpRequest.
-        console.log('Form Data:', formDataObject);
-        alert('Form submitted successfully!');
-        contactForm.reset();
-      }
-    });
-  </script>
+        // Example usage
+        const imageUrls = [
+            'https://via.placeholder.com/300',
+            'https://via.placeholder.com/300',
+            'https://via.placeholder.com/300'
+        ];
+        displayImages(imageUrls);
+    </script>
 </body>
 </html>
